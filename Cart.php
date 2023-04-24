@@ -28,4 +28,13 @@ class Cart
 
         return null;
     }
+
+    public function getTotalQuantity()
+    {
+        $sum = 0;
+        foreach ($this->items as $item) {
+            $sum += $item->getQuantity();
+        }
+        return $sum;
+    }
 }
